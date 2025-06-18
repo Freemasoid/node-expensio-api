@@ -1,54 +1,70 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface TransactionDocument extends Document {
-  title: string;
-  amount: number;
-  type: "expense" | "income";
-  category: string;
-  date: string;
-  description: string;
+  _id: mongoose.Types.ObjectId;
+  clerkId: string;
+  totalSpend: number;
+  totalIncome: number;
+  transactions: {
+    [year: string]: {
+      [month: string]: Array<{
+        _id: { $oid: string };
+        title: string;
+        category: string;
+        amount: number;
+        type: "expense" | "income";
+        date: string;
+        description: string;
+      }>;
+    };
+  };
+  categorySummaries: {
+    [year: string]: {
+      [category: string]: {
+        name: string;
+        yearlySpend: number;
+        monthlyBreakdown: {
+          [month: string]: {
+            name: string;
+            monthlySpend: number;
+            transactionCount: number;
+            lastUpdated: string;
+          };
+        };
+      };
+    };
+  };
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const transactionSchema = new Schema<TransactionDocument>(
   {
-    title: {
+    clerkId: {
       type: String,
       required: true,
     },
-    amount: {
+    totalSpend: {
       type: Number,
-      required: true,
+      default: 0,
     },
-    type: {
-      type: String,
-      enum: ["expense", "income"],
-      required: true,
+    totalIncome: {
+      type: Number,
+      default: 0,
     },
-    category: {
-      type: String,
-      required: true,
+    transactions: {
+      type: Schema.Types.Mixed,
+      default: {},
     },
-    date: {
-      type: String,
-      required: true,
-      validate: {
-        validator: function (v: string) {
-          return !isNaN(Date.parse(v));
-        },
-        message: "Date must be a valid ISO string",
-      },
-    },
-    description: {
-      type: String,
-      required: true,
+    categorySummaries: {
+      type: Schema.Types.Mixed,
+      default: {},
     },
   },
   { timestamps: true }
 );
 
-transactionSchema.index({ date: -1 });
-transactionSchema.index({ type: 1 });
-transactionSchema.index({ category: 1 });
+transactionSchema.index({ clerkId: 1 });
 
 export const TransactionModel = mongoose.model<TransactionDocument>(
   "Transaction",
