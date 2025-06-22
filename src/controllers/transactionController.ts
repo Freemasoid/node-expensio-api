@@ -1,17 +1,26 @@
-import express from "express";
 import type { Request, Response } from "express";
 import { TransactionModel } from "../models/Transaction";
 
-const router = express.Router();
-
-router.get("/:clerkId", async (req: Request, res: Response): Promise<void> => {
+export const getUserTransactions = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const { clerkId } = req.params;
+
+    if (!clerkId) {
+      res.status(400).json({
+        success: false,
+        error: "ClerkId parameter is required",
+      });
+      return;
+    }
+
     const userTransactions = await TransactionModel.findOne({ clerkId });
 
     if (!userTransactions) {
       res.json({
-        success: true,
+        success: false,
         data: {
           totalSpend: 0,
           totalIncome: 0,
@@ -32,12 +41,11 @@ router.get("/:clerkId", async (req: Request, res: Response): Promise<void> => {
       },
     });
   } catch (error) {
+    console.error("Error in getUserTransactions:", error);
     const errorMessage =
       error instanceof Error
         ? error.message
         : "Unknown error occurred during getUserTransactions call";
     res.status(500).json({ success: false, error: errorMessage });
   }
-});
-
-export default router;
+};
