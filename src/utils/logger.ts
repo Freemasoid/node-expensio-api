@@ -17,7 +17,7 @@ export const logger = winston.createLogger({
     winston.format.json()
   ),
 
-  defaultMeta: { service: "comfy-zone-api" },
+  defaultMeta: { service: "node-expensio-api" },
 
   transports: [
     new winston.transports.Console({
@@ -26,7 +26,7 @@ export const logger = winston.createLogger({
         winston.format.printf(
           ({ timestamp, level, message, ...meta }) =>
             `${timestamp} ${level}: ${message} ${
-              Object.keys(meta).length && meta.service !== "comfy-zone-api"
+              Object.keys(meta).length && meta.service !== "node-expensio-api"
                 ? JSON.stringify(meta, null, 2)
                 : ""
             }`
