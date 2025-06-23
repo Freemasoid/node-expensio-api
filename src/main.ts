@@ -1,10 +1,12 @@
 import express, { type Request, type Response } from "express";
 import connectDB from "./db/connect";
 import { logger } from "./utils/logger";
+import { notFoundMiddleware } from "./middleware/not-found";
 import { Server } from "http";
 import cors from "cors";
-import transactionRoutes from "./routes/transactions";
+import { transactionRoutes, userCategoriesRoutes } from "./routes";
 import { config } from "./config";
+import { enhancedErrorHandler } from "./middleware/error-handler";
 
 const app = express();
 const PORT = config.port;
@@ -13,11 +15,30 @@ let server: Server;
 app.use(cors());
 app.use(express.json());
 
+app.use((req, res, next) => {
+  logger.info({
+    message: "Incoming request",
+    method: req.method,
+    path: req.path,
+    headers: {
+      authorization: req.headers.authorization ? "Bearer [REDACTED]" : "none",
+      origin: req.headers.origin,
+      host: req.headers.host,
+    },
+  });
+  next();
+});
+
 app.use("/api/transactions", transactionRoutes);
+app.use("/api/userCategories", userCategoriesRoutes);
 
 app.get("/api/health", (req: Request, res: Response) => {
   res.json({ status: "OK", timestamp: new Date().toISOString() });
 });
+
+app.use("/api/*", notFoundMiddleware);
+
+app.use(enhancedErrorHandler);
 
 const start = async () => {
   try {
