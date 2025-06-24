@@ -14,7 +14,7 @@ export interface TransactionDocument extends Document {
         amount: number;
         type: "expense" | "income";
         date: string;
-        description: string;
+        description?: string;
       }>;
     };
   };
@@ -25,7 +25,6 @@ export interface TransactionDocument extends Document {
         yearlySpend: number;
         monthlyBreakdown: {
           [month: string]: {
-            name: string;
             monthlySpend: number;
             transactionCount: number;
             lastUpdated: string;
@@ -61,10 +60,23 @@ const transactionSchema = new Schema<TransactionDocument>(
       default: {},
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    minimize: false,
+  }
 );
 
 transactionSchema.index({ clerkId: 1 });
+
+// Pre-save hook to mark Mixed fields as modified
+transactionSchema.pre("save", function () {
+  if (this.isModified("transactions") || this.isNew) {
+    this.markModified("transactions");
+  }
+  if (this.isModified("categorySummaries") || this.isNew) {
+    this.markModified("categorySummaries");
+  }
+});
 
 export const TransactionModel = mongoose.model<TransactionDocument>(
   "Transaction",
