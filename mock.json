@@ -1,7 +1,7 @@
 {
   "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d1" },
-  "totalSpend": { "$numberInt": "0" },
-  "totalIncome": { "$numberInt": "0" },
+  "totalSpend": 0,
+  "totalIncome": 0,
   "clerkId": "user_2vSK23ZrSSwOqhyUShFFoK1bi6e",
   "transactions": {
     "2025": {
@@ -10,181 +10,253 @@
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d2" },
           "title": "Grocery Store",
           "category": "food",
-          "amount": { "$numberDouble": "85.5" },
+          "amount": 85.5,
           "type": "expense",
           "date": "2025-06-15T12:30:00.000Z",
-          "description": "Groceries for the week"
+          "description": "Groceries for the week",
+          "createdAt": "2025-06-15T12:30:00.000Z",
+          "updatedAt": "2025-06-15T12:30:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d3" },
           "title": "Uber Ride",
           "category": "transport",
-          "amount": { "$numberDouble": "12.0" },
+          "amount": 12.0,
           "type": "expense",
           "date": "2025-06-15T10:15:00.000Z",
-          "description": "Uber ride to the office"
+          "description": "Uber ride to the office",
+          "createdAt": "2025-06-15T10:15:00.000Z",
+          "updatedAt": "2025-06-15T10:15:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d4" },
           "title": "Netflix Subscription",
           "category": "entertainment",
-          "amount": { "$numberDouble": "15.99" },
+          "amount": 15.99,
           "type": "expense",
           "date": "2025-06-14T12:00:00.000Z",
-          "description": "Netflix subscription"
+          "description": "Netflix subscription",
+          "createdAt": "2025-06-14T12:00:00.000Z",
+          "updatedAt": "2025-06-14T12:00:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d5" },
           "title": "Salary",
           "category": "income",
-          "amount": { "$numberDouble": "3500.0" },
+          "amount": 3500.0,
           "type": "income",
           "date": "2025-06-01T00:00:00.000Z",
-          "description": "Monthly salary"
+          "description": "Monthly salary",
+          "createdAt": "2025-06-01T00:00:00.000Z",
+          "updatedAt": "2025-06-01T00:00:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d6" },
           "title": "Starbucks Coffee",
           "category": "coffee",
-          "amount": { "$numberDouble": "4.95" },
+          "amount": 4.95,
           "type": "expense",
           "date": "2025-06-15T08:45:00.000Z",
-          "description": "Starbucks coffee"
+          "description": "Starbucks coffee",
+          "createdAt": "2025-06-15T08:45:00.000Z",
+          "updatedAt": "2025-06-15T08:45:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d7" },
           "title": "PlayStation Plus",
           "category": "gaming",
-          "amount": { "$numberDouble": "59.99" },
+          "amount": 59.99,
           "type": "expense",
           "date": "2025-06-14T14:40:00.000Z",
-          "description": "PlayStation Plus subscription"
+          "description": "PlayStation Plus subscription",
+          "createdAt": "2025-06-14T14:40:00.000Z",
+          "updatedAt": "2025-06-14T14:40:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d8" },
           "title": "Flight to Paris",
           "category": "travel",
-          "amount": { "$numberDouble": "450.0" },
+          "amount": 450.0,
           "type": "expense",
           "date": "2025-06-13T12:30:00.000Z",
-          "description": "Flight to Paris"
+          "description": "Flight to Paris",
+          "createdAt": "2025-06-13T12:30:00.000Z",
+          "updatedAt": "2025-06-13T12:30:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d9" },
           "title": "Doctor Visit",
           "category": "health",
-          "amount": { "$numberDouble": "120.0" },
+          "amount": 120.0,
           "type": "expense",
           "date": "2025-06-12T14:00:00.000Z",
-          "description": "Doctor visit"
+          "description": "Doctor visit",
+          "createdAt": "2025-06-12T14:00:00.000Z",
+          "updatedAt": "2025-06-12T14:00:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0da" },
           "title": "Zara Shopping",
           "category": "shopping",
-          "amount": { "$numberDouble": "129.99" },
+          "amount": 129.99,
           "type": "expense",
           "date": "2025-06-11T15:35:00.000Z",
-          "description": "Zara shopping"
+          "description": "Zara shopping",
+          "createdAt": "2025-06-11T15:35:00.000Z",
+          "updatedAt": "2025-06-11T15:35:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0db" },
           "title": "Rent Payment",
           "category": "home",
-          "amount": { "$numberDouble": "1200.0" },
+          "amount": 1200.0,
           "type": "expense",
           "date": "2025-06-10T00:00:00.000Z",
-          "description": "Rent payment"
+          "description": "Rent payment",
+          "createdAt": "2025-06-10T00:00:00.000Z",
+          "updatedAt": "2025-06-10T00:00:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0dc" },
           "title": "Freelance Project",
           "category": "income",
-          "amount": { "$numberDouble": "800.0" },
+          "amount": 800.0,
           "type": "income",
           "date": "2025-06-09T16:30:00.000Z",
-          "description": "Freelance project"
+          "description": "Freelance project",
+          "createdAt": "2025-06-09T16:30:00.000Z",
+          "updatedAt": "2025-06-09T16:30:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0dd" },
           "title": "Dental Checkup",
           "category": "health",
-          "amount": { "$numberDouble": "85.0" },
+          "amount": 85.0,
           "type": "expense",
           "date": "2025-06-08T10:00:00.000Z",
-          "description": "Dental checkup"
+          "description": "Dental checkup",
+          "createdAt": "2025-06-08T10:00:00.000Z",
+          "updatedAt": "2025-06-08T10:00:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0de" },
           "title": "Restaurant Dinner",
           "category": "food",
-          "amount": { "$numberDouble": "65.0" },
+          "amount": 65.0,
           "type": "expense",
           "date": "2025-06-14T19:00:00.000Z",
-          "description": "Dinner at Italian restaurant"
+          "description": "Dinner at Italian restaurant",
+          "createdAt": "2025-06-14T19:00:00.000Z",
+          "updatedAt": "2025-06-14T19:00:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0df" },
           "title": "Train Ticket",
           "category": "transport",
-          "amount": { "$numberDouble": "25.0" },
+          "amount": 25.0,
           "type": "expense",
           "date": "2025-06-13T08:30:00.000Z",
-          "description": "Train ticket to city center"
+          "description": "Train ticket to city center",
+          "createdAt": "2025-06-13T08:30:00.000Z",
+          "updatedAt": "2025-06-13T08:30:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e0" },
           "title": "Movie Tickets",
           "category": "entertainment",
-          "amount": { "$numberDouble": "24.0" },
+          "amount": 24.0,
           "type": "expense",
           "date": "2025-06-12T20:00:00.000Z",
-          "description": "Movie tickets for two"
+          "description": "Movie tickets for two",
+          "createdAt": "2025-06-12T20:00:00.000Z",
+          "updatedAt": "2025-06-12T20:00:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e1" },
           "title": "Local Cafe",
           "category": "coffee",
-          "amount": { "$numberDouble": "3.5" },
+          "amount": 3.5,
           "type": "expense",
           "date": "2025-06-14T09:00:00.000Z",
-          "description": "Morning coffee at local cafe"
+          "description": "Morning coffee at local cafe",
+          "createdAt": "2025-06-14T09:00:00.000Z",
+          "updatedAt": "2025-06-14T09:00:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e2" },
           "title": "Xbox Game",
           "category": "gaming",
-          "amount": { "$numberDouble": "49.99" },
+          "amount": 49.99,
           "type": "expense",
           "date": "2025-06-11T16:45:00.000Z",
-          "description": "New Xbox game purchase"
+          "description": "New Xbox game purchase",
+          "createdAt": "2025-06-11T16:45:00.000Z",
+          "updatedAt": "2025-06-11T16:45:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e3" },
           "title": "Hotel Booking",
           "category": "travel",
-          "amount": { "$numberDouble": "200.0" },
+          "amount": 200.0,
           "type": "expense",
           "date": "2025-06-10T14:00:00.000Z",
-          "description": "Hotel booking for weekend trip"
+          "description": "Hotel booking for weekend trip",
+          "createdAt": "2025-06-10T14:00:00.000Z",
+          "updatedAt": "2025-06-10T14:00:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e4" },
           "title": "H&M Shopping",
           "category": "shopping",
-          "amount": { "$numberDouble": "89.99" },
+          "amount": 89.99,
           "type": "expense",
           "date": "2025-06-09T13:30:00.000Z",
-          "description": "Clothes shopping at H&M"
+          "description": "Clothes shopping at H&M",
+          "createdAt": "2025-06-09T13:30:00.000Z",
+          "updatedAt": "2025-06-09T13:30:00.000Z",
+          "_v": 0
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e5" },
           "title": "Electricity Bill",
           "category": "home",
-          "amount": { "$numberDouble": "85.0" },
+          "amount": 85.0,
           "type": "expense",
           "date": "2025-06-08T00:00:00.000Z",
-          "description": "Monthly electricity bill"
+          "description": "Monthly electricity bill",
+          "createdAt": "2025-06-08T00:00:00.000Z",
+          "updatedAt": "2025-06-08T00:00:00.000Z",
+          "_v": 0
+        },
+        {
+          "_id": { "$oid": "685c29a19cf487b3d70d187f" },
+          "title": "Tickets",
+          "category": "transport",
+          "amount": 320,
+          "type": "expense",
+          "date": "2025-06-24T16:53:42.525Z",
+          "description": "Railway Tickets",
+          "createdAt": "2025-06-25T16:53:53.904Z",
+          "updatedAt": "2025-06-25T16:53:53.904Z",
+          "_v": 0
         }
       ]
     }
@@ -192,121 +264,101 @@
   "categorySummaries": {
     "2025": {
       "food": {
-        "name": "food",
-        "yearlySpend": { "$numberDouble": "150.5" },
+        "yearlySpend": 150.5,
         "monthlyBreakdown": {
           "06": {
-            "name": "food",
-            "monthlySpend": { "$numberDouble": "150.5" },
-            "transactionCount": { "$numberInt": "2" },
+            "monthlySpend": 150.5,
+            "transactionCount": 2,
             "lastUpdated": "2025-06-15T12:30:00.000Z"
           }
         }
       },
       "transport": {
-        "name": "transport",
-        "yearlySpend": { "$numberDouble": "37.0" },
+        "yearlySpend": 37.0,
         "monthlyBreakdown": {
           "06": {
-            "name": "transport",
-            "monthlySpend": { "$numberDouble": "37.0" },
-            "transactionCount": { "$numberInt": "2" },
+            "monthlySpend": 37.0,
+            "transactionCount": 2,
             "lastUpdated": "2025-06-15T10:15:00.000Z"
           }
         }
       },
       "entertainment": {
-        "name": "entertainment",
-        "yearlySpend": { "$numberDouble": "39.99" },
+        "yearlySpend": 39.99,
         "monthlyBreakdown": {
           "06": {
-            "name": "entertainment",
-            "monthlySpend": { "$numberDouble": "39.99" },
-            "transactionCount": { "$numberInt": "2" },
+            "monthlySpend": 39.99,
+            "transactionCount": 2,
             "lastUpdated": "2025-06-14T12:00:00.000Z"
           }
         }
       },
       "income": {
-        "name": "income",
-        "yearlySpend": { "$numberDouble": "4300.0" },
+        "yearlySpend": 4300.0,
         "monthlyBreakdown": {
           "06": {
-            "name": "income",
-            "monthlySpend": { "$numberDouble": "4300.0" },
-            "transactionCount": { "$numberInt": "2" },
+            "monthlySpend": 4300.0,
+            "transactionCount": 2,
             "lastUpdated": "2025-06-09T16:30:00.000Z"
           }
         }
       },
       "coffee": {
-        "name": "coffee",
-        "yearlySpend": { "$numberDouble": "8.45" },
+        "yearlySpend": 8.45,
         "monthlyBreakdown": {
           "06": {
-            "name": "coffee",
-            "monthlySpend": { "$numberDouble": "8.45" },
-            "transactionCount": { "$numberInt": "2" },
+            "monthlySpend": 8.45,
+            "transactionCount": 2,
             "lastUpdated": "2025-06-15T08:45:00.000Z"
           }
         }
       },
       "gaming": {
-        "name": "gaming",
-        "yearlySpend": { "$numberDouble": "109.98" },
+        "yearlySpend": 109.98,
         "monthlyBreakdown": {
           "06": {
-            "name": "gaming",
-            "monthlySpend": { "$numberDouble": "109.98" },
-            "transactionCount": { "$numberInt": "2" },
+            "monthlySpend": 109.98,
+            "transactionCount": 2,
             "lastUpdated": "2025-06-14T14:40:00.000Z"
           }
         }
       },
       "travel": {
-        "name": "travel",
-        "yearlySpend": { "$numberDouble": "650.0" },
+        "yearlySpend": 650.0,
         "monthlyBreakdown": {
           "06": {
-            "name": "travel",
-            "monthlySpend": { "$numberDouble": "650.0" },
-            "transactionCount": { "$numberInt": "2" },
+            "monthlySpend": 650.0,
+            "transactionCount": 2,
             "lastUpdated": "2025-06-13T12:30:00.000Z"
           }
         }
       },
       "health": {
-        "name": "health",
-        "yearlySpend": { "$numberDouble": "205.0" },
+        "yearlySpend": 205.0,
         "monthlyBreakdown": {
           "06": {
-            "name": "health",
-            "monthlySpend": { "$numberDouble": "205.0" },
-            "transactionCount": { "$numberInt": "2" },
+            "monthlySpend": 205.0,
+            "transactionCount": 2,
             "lastUpdated": "2025-06-12T14:00:00.000Z"
           }
         }
       },
       "shopping": {
-        "name": "shopping",
-        "yearlySpend": { "$numberDouble": "219.98" },
+        "yearlySpend": 219.98,
         "monthlyBreakdown": {
           "06": {
-            "name": "shopping",
-            "monthlySpend": { "$numberDouble": "219.98" },
-            "transactionCount": { "$numberInt": "2" },
+            "monthlySpend": 219.98,
+            "transactionCount": 2,
             "lastUpdated": "2025-06-11T15:35:00.000Z"
           }
         }
       },
       "home": {
-        "name": "home",
-        "yearlySpend": { "$numberDouble": "1285.0" },
+        "yearlySpend": 1285.0,
         "monthlyBreakdown": {
           "06": {
-            "name": "home",
-            "monthlySpend": { "$numberDouble": "1285.0" },
-            "transactionCount": { "$numberInt": "2" },
+            "monthlySpend": 1285.0,
+            "transactionCount": 2,
             "lastUpdated": "2025-06-10T00:00:00.000Z"
           }
         }
@@ -315,5 +367,5 @@
   },
   "createdAt": "2024-03-21T12:15:00.000Z",
   "updatedAt": "2024-03-21T12:20:00.000Z",
-  "__v": { "$numberInt": "0" }
+  "__v": 0
 }
