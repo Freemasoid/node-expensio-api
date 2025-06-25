@@ -28,7 +28,7 @@ export const createTransaction = async (
 ): Promise<void> => {
   try {
     const { clerkId } = req.params;
-    const data = req.body.data || req.body;
+    const data = req.body;
 
     let transactionDate: Date;
     try {
@@ -91,7 +91,6 @@ export const createTransaction = async (
 
     if (!userTransactions.categorySummaries[year][data.category]) {
       userTransactions.categorySummaries[year][data.category] = {
-        name: data.category,
         yearlySpend: 0,
         monthlyBreakdown: {},
       };
@@ -126,6 +125,69 @@ export const createTransaction = async (
       transaction: newTransaction,
     });
   } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteTransaction = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { clerkId } = req.params;
+    const data: Transaction = req.body;
+
+    const now = new Date();
+    const transactionDate = new Date(data.date);
+    const year = transactionDate.getFullYear().toString();
+    const month = (transactionDate.getMonth() + 1).toString().padStart(2, "0");
+
+    const userTransactions = await TransactionModel.findOne({ clerkId });
+
+    if (!userTransactions) {
+      throw NotFoundError(
+        `There are no transactions for user with id: ${clerkId}`
+      );
+    }
+
+    await TransactionModel.updateOne(
+      { clerkId },
+      {
+        $pull: {
+          [`transactions.${year}.${month}`]: {
+            _id: data._id.$oid,
+          },
+        },
+      }
+    );
+
+    data.type === "expense"
+      ? (userTransactions.totalSpend -= data.amount)
+      : (userTransactions.totalIncome -= data.amount);
+
+    const monthlyBreakdown =
+      userTransactions.categorySummaries[year][data.category].monthlyBreakdown[
+        month
+      ];
+
+    monthlyBreakdown.monthlySpend -= data.amount;
+    monthlyBreakdown.transactionCount -= 1;
+    monthlyBreakdown.lastUpdated = now.toISOString();
+
+    userTransactions.categorySummaries[year][data.category].yearlySpend -=
+      data.amount;
+
+    // Explicitly mark Mixed fields as modified for MongoDB
+    userTransactions.markModified("transactions");
+    userTransactions.markModified("categorySummaries");
+
+    await userTransactions.save();
+
+    res.status(StatusCodes.OK).json({
+      message: "Transaction deleted successfully",
+    });
+  } catch (error) {
+    console.error("Error in deleteTransaction:", error);
     throw error;
   }
 };
