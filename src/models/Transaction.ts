@@ -8,7 +8,7 @@ export interface TransactionDocument extends Document {
   transactions: {
     [year: string]: {
       [month: string]: Array<{
-        _id: { $oid: string };
+        _id: string;
         title: string;
         category: string;
         amount: number;
