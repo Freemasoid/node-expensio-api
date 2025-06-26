@@ -1,5 +1,5 @@
 export type Transaction = {
-  _id: { $oid: string };
+  _id: string;
   title: string;
   amount: number;
   type: "expense" | "income";
