@@ -10,18 +10,18 @@ export const getUserTransactions = async (
   res: Response
 ): Promise<void> => {
   const { clerkId } = req.params;
-  const data = req.body;
+  const { month, year } = req.query;
 
   let userTransactions;
 
-  switch (data) {
-    case data.year && data.month: {
+  switch (year) {
+    case year && month: {
       const projection = {
         _id: 1,
         totalSpend: 1,
         totalIncome: 1,
-        [`transactions.${data.year}.${data.month}`]: 1,
-        [`categorySummaries.${data.year}.${data.category}`]: 1,
+        [`transactions.${year}.${month}`]: 1,
+        [`categorySummaries.${year}`]: 1,
       } as any;
 
       userTransactions = await TransactionModel.findOne(
@@ -29,13 +29,13 @@ export const getUserTransactions = async (
         projection
       );
     }
-    case data.year && !data.month: {
+    case year && !month: {
       const projection = {
         _id: 1,
         totalSpend: 1,
         totalIncome: 1,
-        [`transactions.${data.year}`]: 1,
-        [`categorySummaries.${data.year}.${data.category}`]: 1,
+        [`transactions.${year}`]: 1,
+        [`categorySummaries.${year}`]: 1,
       } as any;
 
       userTransactions = await TransactionModel.findOne(
