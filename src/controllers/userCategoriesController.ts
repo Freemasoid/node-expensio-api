@@ -21,10 +21,28 @@ const defaultCategories = [
   "gifts",
 ];
 
-export const createUserCategoriesDocument = async (clerkId: string) => {
-  return await UserCategoriesModel.create({
+export const createUserCategoriesDocument = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { clerkId } = req.params;
+
+  const userCategories = await UserCategoriesModel.findOne({
     clerkId: clerkId,
-    defaultCategories,
+  });
+
+  if (userCategories) {
+    throw BadRequestError("Categories document already exists for this user");
+  } else {
+    await UserCategoriesModel.create({
+      clerkId: clerkId,
+      defaultCategories,
+    });
+  }
+
+  res.status(StatusCodes.CREATED).json({
+    message: "User categories successfully created",
+    userCategories: defaultCategories,
   });
 };
 
