@@ -4,21 +4,21 @@ import { StatusCodes } from "http-status-codes";
 import { BadRequestError } from "../errors/custom-errors";
 
 const defaultCategories = [
-  "Food",
-  "Transport",
-  "Shopping",
-  "Entertainment",
-  "Bills",
-  "Healthcare",
-  "Education",
-  "Travel",
-  "Housing",
-  "Utilities",
-  "Insurance",
-  "Investment",
-  "Salary",
-  "Freelance",
-  "Gifts",
+  "food",
+  "transport",
+  "shopping",
+  "entertainment",
+  "bills",
+  "healthcare",
+  "education",
+  "travel",
+  "housing",
+  "utilities",
+  "insurance",
+  "investment",
+  "salary",
+  "freelance",
+  "gifts",
 ];
 
 export const createUserCategoriesDocument = async (clerkId: string) => {
@@ -74,7 +74,10 @@ export const addUserCategory = async (
 
   await userCategories.save();
 
-  res.status(StatusCodes.OK).json(userCategories);
+  res.status(StatusCodes.OK).json({
+    message: "User category successfully added",
+    userCategories: userCategories,
+  });
 };
 
 export const deleteUserCategory = async (
@@ -110,5 +113,41 @@ export const deleteUserCategory = async (
 
   await userCategories.save();
 
-  res.status(StatusCodes.OK).json(userCategories);
+  res.status(StatusCodes.OK).json({
+    message: "User category successfully deleted",
+    userCategories: userCategories,
+  });
+};
+
+export const updateUserCategory = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { clerkId } = req.params;
+  let { category, newCategory } = req.body;
+
+  if (!category || typeof category !== "string" || category === "") {
+    throw BadRequestError("Category is required and must be non-empty string");
+  }
+
+  const userCategories = await UserCategoriesModel.findOne({
+    clerkId: clerkId,
+  });
+
+  if (!userCategories) {
+    throw BadRequestError(`No categories found for user: ${clerkId}`);
+  }
+
+  const filterCategories = userCategories.categories.filter(
+    (value) => value !== category
+  );
+
+  userCategories.categories.push(newCategory);
+
+  await userCategories.save();
+
+  res.status(StatusCodes.OK).json({
+    message: "User category successfully updated",
+    userCategories: userCategories,
+  });
 };
