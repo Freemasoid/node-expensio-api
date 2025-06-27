@@ -195,3 +195,167 @@ export const deleteTransaction = async (
     message: "Transaction deleted successfully",
   });
 };
+
+export const updateTransaction = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { clerkId } = req.params;
+  const data = req.body;
+
+  const now = new Date();
+
+  const transactionId =
+    typeof data._id === "string" ? data._id : (data._id as any).$oid;
+
+  const oldTransactionDate = new Date(data.date);
+  const oldYear = oldTransactionDate.getFullYear().toString();
+  const oldMonth = (oldTransactionDate.getMonth() + 1)
+    .toString()
+    .padStart(2, "0");
+
+  const newDate = data.newDate || data.date;
+  const newTransactionDate = new Date(newDate);
+  const newYear = newTransactionDate.getFullYear().toString();
+  const newMonth = (newTransactionDate.getMonth() + 1)
+    .toString()
+    .padStart(2, "0");
+
+  const projection = {
+    _id: 1,
+    totalSpend: 1,
+    totalIncome: 1,
+    [`transactions.${oldYear}.${oldMonth}`]: 1,
+    [`categorySummaries.${oldYear}.${data.category}`]: 1,
+  } as any;
+
+  const dateChanged = oldYear !== newYear || oldMonth !== newMonth;
+  if (dateChanged) {
+    projection[`transactions.${newYear}.${newMonth}`] = 1;
+    if (data.category) {
+      projection[`categorySummaries.${newYear}.${data.category}`] = 1;
+    }
+  }
+
+  const userTransactions = await TransactionModel.findOne(
+    { clerkId },
+    projection
+  );
+
+  if (!userTransactions) {
+    throw NotFoundError(
+      `There are no transactions for user with id: ${clerkId}`
+    );
+  }
+
+  const oldMonthTransactions =
+    userTransactions.transactions?.[oldYear]?.[oldMonth];
+  const transactionIndex = oldMonthTransactions?.findIndex(
+    (t) => t._id.toString() === transactionId
+  );
+
+  if (transactionIndex === undefined || transactionIndex === -1) {
+    throw NotFoundError(
+      `Transaction with id ${transactionId} not found in the specified date location`
+    );
+  }
+
+  const existingTransaction = oldMonthTransactions[transactionIndex];
+  const oldAmount = existingTransaction.amount;
+  const oldType = existingTransaction.type;
+  const oldCategory = existingTransaction.category;
+
+  if (oldType === "expense") {
+    userTransactions.totalSpend -= oldAmount;
+  } else {
+    userTransactions.totalIncome -= oldAmount;
+  }
+
+  if (data.type === "expense") {
+    userTransactions.totalSpend += data.amount;
+  } else {
+    userTransactions.totalIncome += data.amount;
+  }
+
+  const updatedTransaction: Transaction = {
+    _id: transactionId,
+    title: data.title,
+    category: data.category,
+    amount: data.amount,
+    type: data.type,
+    date: newDate,
+    description: data.description || "",
+    createdAt: (existingTransaction as any).createdAt || now,
+    updatedAt: now,
+    _v: (existingTransaction as any)._v || 0,
+  };
+
+  if (dateChanged) {
+    oldMonthTransactions.splice(transactionIndex, 1);
+
+    if (!userTransactions.transactions[newYear]) {
+      userTransactions.transactions[newYear] = {};
+    }
+    if (!userTransactions.transactions[newYear][newMonth]) {
+      userTransactions.transactions[newYear][newMonth] = [];
+    }
+
+    userTransactions.transactions[newYear][newMonth].push(updatedTransaction);
+  } else {
+    oldMonthTransactions[transactionIndex] = updatedTransaction;
+  }
+
+  if (userTransactions.categorySummaries[oldYear]?.[oldCategory]) {
+    const oldCategorySummary =
+      userTransactions.categorySummaries[oldYear][oldCategory];
+    const oldMonthlyBreakdown = oldCategorySummary.monthlyBreakdown[oldMonth];
+
+    if (oldMonthlyBreakdown) {
+      oldMonthlyBreakdown.monthlySpend -= oldAmount;
+      oldMonthlyBreakdown.transactionCount -= 1;
+      oldMonthlyBreakdown.lastUpdated = now.toISOString();
+
+      oldCategorySummary.yearlySpend -= oldAmount;
+    }
+  }
+
+  if (!userTransactions.categorySummaries[newYear]) {
+    userTransactions.categorySummaries[newYear] = {};
+  }
+
+  if (!userTransactions.categorySummaries[newYear][data.category]) {
+    userTransactions.categorySummaries[newYear][data.category] = {
+      yearlySpend: 0,
+      monthlyBreakdown: {},
+    };
+  }
+
+  const newCategorySummary =
+    userTransactions.categorySummaries[newYear][data.category];
+
+  if (!newCategorySummary.monthlyBreakdown[newMonth]) {
+    newCategorySummary.monthlyBreakdown[newMonth] = {
+      monthlySpend: 0,
+      transactionCount: 0,
+      lastUpdated: now.toISOString(),
+    };
+  }
+
+  const newMonthlyBreakdown = newCategorySummary.monthlyBreakdown[newMonth];
+  newMonthlyBreakdown.monthlySpend += data.amount;
+  newMonthlyBreakdown.transactionCount += 1;
+  newMonthlyBreakdown.lastUpdated = now.toISOString();
+
+  newCategorySummary.yearlySpend += data.amount;
+
+  userTransactions.markModified("transactions");
+  userTransactions.markModified("categorySummaries");
+
+  await userTransactions.save();
+
+  res.status(StatusCodes.OK).json({
+    message: "Transaction updated successfully",
+    transaction: updatedTransaction,
+    moved: dateChanged,
+  });
+};
