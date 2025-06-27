@@ -10,8 +10,42 @@ export const getUserTransactions = async (
   res: Response
 ): Promise<void> => {
   const { clerkId } = req.params;
+  const data = req.body;
 
-  const userTransactions = await TransactionModel.findOne({ clerkId });
+  let userTransactions;
+
+  switch (data) {
+    case data.year && data.month: {
+      const projection = {
+        _id: 1,
+        totalSpend: 1,
+        totalIncome: 1,
+        [`transactions.${data.year}.${data.month}`]: 1,
+        [`categorySummaries.${data.year}.${data.category}`]: 1,
+      } as any;
+
+      userTransactions = await TransactionModel.findOne(
+        { clerkId },
+        projection
+      );
+    }
+    case data.year && !data.month: {
+      const projection = {
+        _id: 1,
+        totalSpend: 1,
+        totalIncome: 1,
+        [`transactions.${data.year}`]: 1,
+        [`categorySummaries.${data.year}.${data.category}`]: 1,
+      } as any;
+
+      userTransactions = await TransactionModel.findOne(
+        { clerkId },
+        projection
+      );
+    }
+    default:
+      userTransactions = await TransactionModel.findOne({ clerkId });
+  }
 
   if (!userTransactions) {
     throw NotFoundError(
