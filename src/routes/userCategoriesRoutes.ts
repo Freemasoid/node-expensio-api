@@ -3,9 +3,12 @@ import {
   getUserCategories,
   addUserCategory,
   deleteUserCategory,
+  createUserCategoriesDocument,
 } from "../controllers/userCategoriesController";
 
 const router = express.Router();
+
+router.post("/:clerkId", createUserCategoriesDocument);
 
 router.get("/:clerkId", getUserCategories);
 
