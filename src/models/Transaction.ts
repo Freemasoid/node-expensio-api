@@ -24,7 +24,7 @@ export interface TransactionDocument extends Document {
         yearlySpend: number;
         monthlyBreakdown: {
           [month: string]: {
-            monthlySpend: number;
+            amount: number;
             transactionCount: number;
             lastUpdated: string;
           };
