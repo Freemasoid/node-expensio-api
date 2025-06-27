@@ -134,12 +134,12 @@ export const createTransaction = async (
 
   if (!monthlyBreakdown[month]) {
     monthlyBreakdown[month] = {
-      monthlySpend: data.amount,
+      amount: data.amount,
       transactionCount: 1,
       lastUpdated: now.toISOString(),
     };
   } else {
-    monthlyBreakdown[month].monthlySpend += data.amount;
+    monthlyBreakdown[month].amount += data.amount;
     monthlyBreakdown[month].transactionCount += 1;
     monthlyBreakdown[month].lastUpdated = now.toISOString();
   }
@@ -212,7 +212,7 @@ export const deleteTransaction = async (
       month
     ];
 
-  monthlyBreakdown.monthlySpend -= data.amount;
+  monthlyBreakdown.amount -= data.amount;
   monthlyBreakdown.transactionCount -= 1;
   monthlyBreakdown.lastUpdated = now.toISOString();
 
@@ -345,7 +345,7 @@ export const updateTransaction = async (
     const oldMonthlyBreakdown = oldCategorySummary.monthlyBreakdown[oldMonth];
 
     if (oldMonthlyBreakdown) {
-      oldMonthlyBreakdown.monthlySpend -= oldAmount;
+      oldMonthlyBreakdown.amount -= oldAmount;
       oldMonthlyBreakdown.transactionCount -= 1;
       oldMonthlyBreakdown.lastUpdated = now.toISOString();
 
@@ -369,14 +369,14 @@ export const updateTransaction = async (
 
   if (!newCategorySummary.monthlyBreakdown[newMonth]) {
     newCategorySummary.monthlyBreakdown[newMonth] = {
-      monthlySpend: 0,
+      amount: 0,
       transactionCount: 0,
       lastUpdated: now.toISOString(),
     };
   }
 
   const newMonthlyBreakdown = newCategorySummary.monthlyBreakdown[newMonth];
-  newMonthlyBreakdown.monthlySpend += data.amount;
+  newMonthlyBreakdown.amount += data.amount;
   newMonthlyBreakdown.transactionCount += 1;
   newMonthlyBreakdown.lastUpdated = now.toISOString();
 
