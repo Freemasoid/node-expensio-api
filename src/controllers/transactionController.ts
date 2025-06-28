@@ -14,37 +14,28 @@ export const getUserTransactions = async (
 
   let userTransactions;
 
-  switch (year) {
-    case year && month: {
-      const projection = {
-        _id: 1,
-        totalSpend: 1,
-        totalIncome: 1,
-        [`transactions.${year}.${month}`]: 1,
-        [`categorySummaries.${year}`]: 1,
-      } as any;
+  if (year && month) {
+    const projection = {
+      _id: 1,
+      totalSpend: 1,
+      totalIncome: 1,
+      [`transactions.${year}.${month}`]: 1,
+      [`categorySummaries.${year}`]: 1,
+    } as any;
 
-      userTransactions = await TransactionModel.findOne(
-        { clerkId },
-        projection
-      );
-    }
-    case year && !month: {
-      const projection = {
-        _id: 1,
-        totalSpend: 1,
-        totalIncome: 1,
-        [`transactions.${year}`]: 1,
-        [`categorySummaries.${year}`]: 1,
-      } as any;
+    userTransactions = await TransactionModel.findOne({ clerkId }, projection);
+  } else if (year && !month) {
+    const projection = {
+      _id: 1,
+      totalSpend: 1,
+      totalIncome: 1,
+      [`transactions.${year}`]: 1,
+      [`categorySummaries.${year}`]: 1,
+    } as any;
 
-      userTransactions = await TransactionModel.findOne(
-        { clerkId },
-        projection
-      );
-    }
-    default:
-      userTransactions = await TransactionModel.findOne({ clerkId });
+    userTransactions = await TransactionModel.findOne({ clerkId }, projection);
+  } else {
+    userTransactions = await TransactionModel.findOne({ clerkId });
   }
 
   if (!userTransactions) {
