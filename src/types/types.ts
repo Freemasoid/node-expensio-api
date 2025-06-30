@@ -6,7 +6,7 @@ export type Transaction = {
   category: string;
   date: string;
   description?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
   _v: number;
 };

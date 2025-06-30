@@ -21,7 +21,7 @@ export interface TransactionDocument extends Document {
   categorySummaries: {
     [year: string]: {
       [category: string]: {
-        yearlySpend: number;
+        yearlyAmount: number;
         monthlyBreakdown: {
           [month: string]: {
             amount: number;

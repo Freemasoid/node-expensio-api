@@ -59,19 +59,7 @@ export const createTransaction = async (
   const year = transactionDate.getFullYear().toString();
   const month = (transactionDate.getMonth() + 1).toString().padStart(2, "0");
 
-  // Use projection to fetch only necessary data
-  const projection = {
-    _id: 1,
-    totalSpend: 1,
-    totalIncome: 1,
-    [`transactions.${year}.${month}`]: 1,
-    [`categorySummaries.${year}.${data.category}`]: 1,
-  } as any;
-
-  const userTransactions = await TransactionModel.findOne(
-    { clerkId },
-    projection
-  );
+  const userTransactions = await TransactionModel.findOne({ clerkId });
 
   if (!userTransactions) {
     throw NotFoundError(
@@ -99,8 +87,8 @@ export const createTransaction = async (
     type: data.type,
     date: data.date,
     description: data.description || "",
-    createdAt: now,
-    updatedAt: now,
+    createdAt: now.toISOString(),
+    updatedAt: now.toISOString(),
     _v: 0,
   };
 
@@ -112,12 +100,12 @@ export const createTransaction = async (
 
   if (!userTransactions.categorySummaries[year][data.category]) {
     userTransactions.categorySummaries[year][data.category] = {
-      yearlySpend: 0,
+      yearlyAmount: 0,
       monthlyBreakdown: {},
     };
   }
 
-  userTransactions.categorySummaries[year][data.category].yearlySpend +=
+  userTransactions.categorySummaries[year][data.category].yearlyAmount +=
     data.amount;
 
   const monthlyBreakdown =
@@ -135,7 +123,6 @@ export const createTransaction = async (
     monthlyBreakdown[month].lastUpdated = now.toISOString();
   }
 
-  // Explicitly mark Mixed fields as modified for MongoDB
   userTransactions.markModified("transactions");
   userTransactions.markModified("categorySummaries");
 
@@ -159,18 +146,7 @@ export const deleteTransaction = async (
   const year = transactionDate.getFullYear().toString();
   const month = (transactionDate.getMonth() + 1).toString().padStart(2, "0");
 
-  const projection = {
-    _id: 1,
-    totalSpend: 1,
-    totalIncome: 1,
-    [`transactions.${year}.${month}`]: 1,
-    [`categorySummaries.${year}.${data.category}`]: 1,
-  } as any;
-
-  const userTransactions = await TransactionModel.findOne(
-    { clerkId },
-    projection
-  );
+  const userTransactions = await TransactionModel.findOne({ clerkId });
 
   if (!userTransactions) {
     throw NotFoundError(
@@ -207,10 +183,9 @@ export const deleteTransaction = async (
   monthlyBreakdown.transactionCount -= 1;
   monthlyBreakdown.lastUpdated = now.toISOString();
 
-  userTransactions.categorySummaries[year][data.category].yearlySpend -=
+  userTransactions.categorySummaries[year][data.category].yearlyAmount -=
     data.amount;
 
-  // Explicitly mark Mixed fields as modified for MongoDB
   userTransactions.markModified("transactions");
   userTransactions.markModified("categorySummaries");
 
@@ -246,26 +221,7 @@ export const updateTransaction = async (
     .toString()
     .padStart(2, "0");
 
-  const projection = {
-    _id: 1,
-    totalSpend: 1,
-    totalIncome: 1,
-    [`transactions.${oldYear}.${oldMonth}`]: 1,
-    [`categorySummaries.${oldYear}.${data.category}`]: 1,
-  } as any;
-
-  const dateChanged = oldYear !== newYear || oldMonth !== newMonth;
-  if (dateChanged) {
-    projection[`transactions.${newYear}.${newMonth}`] = 1;
-    if (data.category) {
-      projection[`categorySummaries.${newYear}.${data.category}`] = 1;
-    }
-  }
-
-  const userTransactions = await TransactionModel.findOne(
-    { clerkId },
-    projection
-  );
+  const userTransactions = await TransactionModel.findOne({ clerkId });
 
   if (!userTransactions) {
     throw NotFoundError(
@@ -311,11 +267,11 @@ export const updateTransaction = async (
     date: newDate,
     description: data.description || "",
     createdAt: (existingTransaction as any).createdAt || now,
-    updatedAt: now,
+    updatedAt: now.toISOString(),
     _v: (existingTransaction as any)._v || 0,
   };
 
-  if (dateChanged) {
+  if (oldYear !== newYear || oldMonth !== newMonth) {
     oldMonthTransactions.splice(transactionIndex, 1);
 
     if (!userTransactions.transactions[newYear]) {
@@ -340,7 +296,7 @@ export const updateTransaction = async (
       oldMonthlyBreakdown.transactionCount -= 1;
       oldMonthlyBreakdown.lastUpdated = now.toISOString();
 
-      oldCategorySummary.yearlySpend -= oldAmount;
+      oldCategorySummary.yearlyAmount -= oldAmount;
     }
   }
 
@@ -350,7 +306,7 @@ export const updateTransaction = async (
 
   if (!userTransactions.categorySummaries[newYear][data.category]) {
     userTransactions.categorySummaries[newYear][data.category] = {
-      yearlySpend: 0,
+      yearlyAmount: 0,
       monthlyBreakdown: {},
     };
   }
@@ -371,7 +327,7 @@ export const updateTransaction = async (
   newMonthlyBreakdown.transactionCount += 1;
   newMonthlyBreakdown.lastUpdated = now.toISOString();
 
-  newCategorySummary.yearlySpend += data.amount;
+  newCategorySummary.yearlyAmount += data.amount;
 
   userTransactions.markModified("transactions");
   userTransactions.markModified("categorySummaries");
@@ -381,6 +337,6 @@ export const updateTransaction = async (
   res.status(StatusCodes.OK).json({
     message: "Transaction updated successfully",
     transaction: updatedTransaction,
-    moved: dateChanged,
+    moved: oldYear !== newYear || oldMonth !== newMonth,
   });
 };
