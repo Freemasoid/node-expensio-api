@@ -1,0 +1,354 @@
+{
+  "yaakVersion": "2025.4.0",
+  "yaakSchema": 4,
+  "timestamp": "2025-07-08T02:07:32.300195",
+  "resources": {
+    "workspaces": [
+      {
+        "model": "workspace",
+        "id": "wk_uQYygHJA9g",
+        "createdAt": "2025-04-27T15:19:24.258247",
+        "updatedAt": "2025-04-27T15:19:24.258247",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Yaak",
+        "encryptionKeyChallenge": null,
+        "settingValidateCertificates": true,
+        "settingFollowRedirects": true,
+        "settingRequestTimeout": 0
+      }
+    ],
+    "environments": [],
+    "folders": [
+      {
+        "model": "folder",
+        "id": "fl_xF2aJ3pAyC",
+        "createdAt": "2025-06-23T12:34:35.641360",
+        "updatedAt": "2025-06-23T12:34:40.816141",
+        "workspaceId": "wk_uQYygHJA9g",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Expensio",
+        "sortPriority": 1000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_UBSRqa3M2s",
+        "createdAt": "2025-06-23T12:33:40.064703",
+        "updatedAt": "2025-06-23T12:34:45.396749",
+        "workspaceId": "wk_uQYygHJA9g",
+        "folderId": "fl_xF2aJ3pAyC",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "User Categories",
+        "sortPriority": 0.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_brkRAmxhc7",
+        "createdAt": "2025-06-23T12:31:37.902407",
+        "updatedAt": "2025-06-23T12:34:45.399574",
+        "workspaceId": "wk_uQYygHJA9g",
+        "folderId": "fl_xF2aJ3pAyC",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "User Transactions",
+        "sortPriority": 1000.0
+      }
+    ],
+    "httpRequests": [
+      {
+        "model": "http_request",
+        "id": "rq_pWxHF8YxrZ",
+        "createdAt": "2025-06-27T01:00:50.148828",
+        "updatedAt": "2025-06-27T01:26:43.303611",
+        "workspaceId": "wk_uQYygHJA9g",
+        "folderId": "fl_brkRAmxhc7",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "        {\n          \"_id\": \"685df3267ad0cdfdf064af58\",\n          \"title\": \"Royale with Cheese\",\n          \"category\": \"food\",\n          \"amount\": 320,\n          \"type\": \"expense\",\n          \"date\": \"2025-06-24T16:53:42.525Z\",\n          \"newDate\": \"2025-05-24T16:53:42.525Z\",\n          \"description\": \"That's how they call them in France\",\n          \"createdAt\": \"2025-06-27T01:25:58.228Z\",\n          \"updatedAt\": \"2025-06-27T01:25:58.228Z\",\n          \"_v\": 0\n        }"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "vWpDGIRMmx"
+          }
+        ],
+        "method": "POST",
+        "name": "Update Transaction",
+        "sortPriority": 0.002,
+        "url": "http://localhost:5174/api/transactions/update/:clerkId",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": ":clerkId",
+            "value": "user_EXAMPLE_CLERK_ID",
+            "id": "DY0BfbyJhH"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "FGC3c7iM0f"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_XegcXVqYQt",
+        "createdAt": "2025-06-25T16:38:22.790294",
+        "updatedAt": "2025-06-26T17:19:39.876461",
+        "workspaceId": "wk_uQYygHJA9g",
+        "folderId": "fl_brkRAmxhc7",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n          \"_id\": \"685c29a19cf487b3d70d187f\",\n          \"title\": \"Tickets\",\n          \"category\": \"transport\",\n          \"amount\": 320,\n          \"type\": \"expense\",\n          \"date\": \"2025-06-24T16:53:42.525Z\",\n          \"description\": \"Railway Tickets\",\n          \"createdAt\": \"2025-06-25T16:53:53.904Z\",\n          \"updatedAt\": \"2025-06-25T16:53:53.904Z\",\n          \"_v\": 0\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "vWpDGIRMmx"
+          }
+        ],
+        "method": "DELETE",
+        "name": "Delete Transaction",
+        "sortPriority": 0.002,
+        "url": "http://localhost:5174/api/transactions/:clerkId",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": ":clerkId",
+            "value": "user_EXAMPLE_CLERK_ID",
+            "id": "DY0BfbyJhH"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "FGC3c7iM0f"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_dfmc2xkjmK",
+        "createdAt": "2025-06-24T16:52:14.548792",
+        "updatedAt": "2025-06-30T00:02:30.773148",
+        "workspaceId": "wk_uQYygHJA9g",
+        "folderId": "fl_brkRAmxhc7",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"title\": \"Royale with Cheese\",\n  \"category\": \"food\",\n  \"amount\": 320,\n  \"type\": \"expense\",\n  \"date\": \"2025-05-24T16:53:42.525Z\",\n  \"description\": \"That's how they call them in France\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "vWpDGIRMmx"
+          }
+        ],
+        "method": "POST",
+        "name": "Create Transaction",
+        "sortPriority": 0.001,
+        "url": "http://localhost:5174/api/transactions/:clerkId",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": ":clerkId",
+            "value": "user_EXAMPLE_CLERK_ID",
+            "id": "DY0BfbyJhH"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "FGC3c7iM0f"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_qjF9GJkF6D",
+        "createdAt": "2025-06-23T12:54:00.660591",
+        "updatedAt": "2025-06-23T12:54:44.374754",
+        "workspaceId": "wk_uQYygHJA9g",
+        "folderId": "fl_UBSRqa3M2s",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"category\": \"BlackJack & Hookers\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "JpNjIvCD7X"
+          }
+        ],
+        "method": "DELETE",
+        "name": "Delete User Category",
+        "sortPriority": 0.0009,
+        "url": "http://localhost:5174/api/userCategories/:clerkId",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": ":clerkId",
+            "value": "user_EXAMPLE_CLERK_ID",
+            "id": "unPrQfyXvD"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "3g3geqFBbn"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_cYcsGghX7V",
+        "createdAt": "2025-06-23T12:35:15.039534",
+        "updatedAt": "2025-06-23T12:53:48.784015",
+        "workspaceId": "wk_uQYygHJA9g",
+        "folderId": "fl_UBSRqa3M2s",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"category\": \"BlackJack & Hookers\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "JpNjIvCD7X"
+          }
+        ],
+        "method": "POST",
+        "name": "Add User Category",
+        "sortPriority": -0.0001,
+        "url": "http://localhost:5174/api/userCategories/:clerkId",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": ":clerkId",
+            "value": "user_EXAMPLE_CLERK_ID",
+            "id": "unPrQfyXvD"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "3g3geqFBbn"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_yVZV2NDgcv",
+        "createdAt": "2025-06-23T12:31:18.159715",
+        "updatedAt": "2025-07-01T16:36:01.627464",
+        "workspaceId": "wk_uQYygHJA9g",
+        "folderId": "fl_brkRAmxhc7",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Get User Transactions",
+        "sortPriority": 0.0,
+        "url": "http://localhost:5174/api/transactions/:clerkId",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": ":clerkId",
+            "value": "user_EXAMPLE_CLERK_ID",
+            "id": "DY0BfbyJhH"
+          },
+          {
+            "enabled": true,
+            "name": "year",
+            "value": "2025",
+            "id": "Q6QAiQ4tsC"
+          },
+          {
+            "enabled": false,
+            "name": "month",
+            "value": "05",
+            "id": "ajRQrzVeME"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "RdDmRte6yH"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_FVzbR8tFhJ",
+        "createdAt": "2025-06-17T16:07:41.351169",
+        "updatedAt": "2025-06-23T13:53:25.765894",
+        "workspaceId": "wk_uQYygHJA9g",
+        "folderId": "fl_UBSRqa3M2s",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Get User Categories",
+        "sortPriority": 0.0,
+        "url": "http://localhost:5174/api/userCategories/:clerkId",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": ":clerkId",
+            "value": "user_EXAMPLE_CLERK_ID",
+            "id": "P8KC2fGuHE"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "Ec8yAYq4Ja"
+          }
+        ]
+      }
+    ],
+    "grpcRequests": [],
+    "websocketRequests": []
+  }
+}
