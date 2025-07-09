@@ -5,7 +5,7 @@ import { logger } from "./utils/logger";
 import { notFoundMiddleware } from "./middleware/not-found";
 import { Server } from "http";
 import cors from "cors";
-import { transactionRoutes, userCategoriesRoutes } from "./routes";
+import { cardRoutes, transactionRoutes, userCategoriesRoutes } from "./routes";
 import { config } from "./config";
 import { enhancedErrorHandler } from "./middleware/error-handler";
 
@@ -32,6 +32,7 @@ app.use((req, res, next) => {
 
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/userCategories", userCategoriesRoutes);
+app.use("/api/cards", cardRoutes);
 
 app.get("/api/health", (req: Request, res: Response) => {
   res.json({ status: "OK", timestamp: new Date().toISOString() });
