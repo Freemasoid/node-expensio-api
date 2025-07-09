@@ -10,3 +10,18 @@ export type Transaction = {
   updatedAt: string;
   _v: number;
 };
+
+export type Card = {
+  _id: string;
+  bankName: string;
+  type: "credit" | "debit";
+  lastFourDigits: string;
+  expiryMonth: string;
+  expiryYear: string;
+  cardholderName: string;
+  color: string;
+  isDefault: boolean;
+  createdAt: string;
+  updatedAt: string;
+  _v: number;
+};
