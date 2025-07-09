@@ -2,7 +2,7 @@
   "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d1" },
   "totalSpend": 3015.92,
   "totalIncome": 8600.0,
-  "clerkId": "user_2vSK23ZrSSwOqhyUShFFoK1bi6e",
+  "clerkId": "user_EXAMPLE_CLERK_ID",
   "transactions": {
     "2025": {
       "07": [

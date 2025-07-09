@@ -1,0 +1,23 @@
+{
+  "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c045" },
+  "clerkId": "user_EXAMPLE_CLERK_ID",
+  "cards": [
+    {
+      "bankName": "Raiffeisen Bank",
+      "type": "credit",
+      "lastFourDigits": "0423",
+      "expiryMonth": "06",
+      "expiryYear": "2042",
+      "cardholderName": "John Doe",
+      "color": "#fae74d",
+      "isDefault": false,
+      "createdAt": "2025-07-09T18:53:46.901Z",
+      "updatedAt": "2025-07-09T18:54:00.394Z",
+      "_v": 0,
+      "_id": { "$oid": "686ebabb9527f4e45c8dc87d" }
+    }
+  ],
+  "__v": 0,
+  "updatedAt": "2025-07-09T18:54:00.497Z",
+  "createdAt": "2025-07-09T18:37:22.522Z"
+}
