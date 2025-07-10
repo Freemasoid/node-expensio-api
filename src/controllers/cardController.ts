@@ -31,7 +31,7 @@ export const createCard = async (
   const newCard: Card = {
     _id: new mongoose.Types.ObjectId().toString(),
     bankName: data.bankName,
-    type: data.type,
+    cardType: data.type,
     lastFourDigits: data.lastFourDigits,
     expiryMonth: data.expiryMonth,
     expiryYear: data.expiryYear,

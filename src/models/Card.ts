@@ -6,7 +6,7 @@ export interface CardDocument extends Document {
   cards: {
     _id: string;
     bankName: string;
-    type: "credit" | "debit";
+    cardType: "credit" | "debit";
     lastFourDigits: string;
     expiryMonth: string;
     expiryYear: string;
@@ -35,7 +35,7 @@ const cardSchema = new Schema<CardDocument>(
           type: String,
           required: true,
         },
-        type: {
+        cardType: {
           type: String,
           enum: ["credit", "debit"],
           required: true,
