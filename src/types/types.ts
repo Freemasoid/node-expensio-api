@@ -14,7 +14,7 @@ export type Transaction = {
 export type Card = {
   _id: string;
   bankName: string;
-  type: "credit" | "debit";
+  cardType: "credit" | "debit";
   lastFourDigits: string;
   expiryMonth: string;
   expiryYear: string;
