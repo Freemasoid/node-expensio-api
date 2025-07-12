@@ -16,8 +16,6 @@ export type Card = {
   bankName: string;
   cardType: "credit" | "debit";
   lastFourDigits: string;
-  expiryMonth: string;
-  expiryYear: string;
   cardholderName: string;
   color: string;
   isDefault: boolean;

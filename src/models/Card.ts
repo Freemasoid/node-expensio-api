@@ -8,8 +8,6 @@ export interface CardDocument extends Document {
     bankName: string;
     cardType: "credit" | "debit";
     lastFourDigits: string;
-    expiryMonth: string;
-    expiryYear: string;
     cardholderName: string;
     color: string;
     isDefault: boolean;
@@ -41,14 +39,6 @@ const cardSchema = new Schema<CardDocument>(
           required: true,
         },
         lastFourDigits: {
-          type: String,
-          required: true,
-        },
-        expiryMonth: {
-          type: String,
-          required: true,
-        },
-        expiryYear: {
           type: String,
           required: true,
         },
