@@ -31,7 +31,7 @@ export const createCard = async (
   const newCard: Card = {
     _id: new mongoose.Types.ObjectId().toString(),
     bankName: data.bankName,
-    cardType: data.type,
+    cardType: data.cardType,
     lastFourDigits: data.lastFourDigits,
     cardholderName: data.cardholderName,
     color: data.color,
@@ -71,7 +71,7 @@ export const updateCard = async (
     {
       $set: {
         "cards.$[card].bankName": data.bankName,
-        "cards.$[card].type": data.type,
+        "cards.$[card].type": data.cardType,
         "cards.$[card].lastFourDigits": data.lastFourDigits,
         "cards.$[card].cardholderName": data.cardholderName,
         "cards.$[card].color": data.color,
