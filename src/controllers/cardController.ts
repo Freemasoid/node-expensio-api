@@ -19,6 +19,7 @@ export const createCard = async (
 ): Promise<void> => {
   const { clerkId } = req.params;
   const data = req.body;
+  let defaultCard = false;
 
   const now = new Date();
 
@@ -28,6 +29,10 @@ export const createCard = async (
     throw NotFoundError(`There are no cards for user with id: ${clerkId}`);
   }
 
+  if (userCards.cards.length === 0) {
+    defaultCard = true;
+  }
+
   const newCard: Card = {
     _id: new mongoose.Types.ObjectId().toString(),
     bankName: data.bankName,
@@ -35,7 +40,7 @@ export const createCard = async (
     lastFourDigits: data.lastFourDigits,
     cardholderName: data.cardholderName,
     color: data.color,
-    isDefault: false,
+    isDefault: defaultCard,
     createdAt: now.toISOString(),
     updatedAt: now.toISOString(),
     _v: 0,
@@ -107,4 +112,34 @@ export const deleteCard = async (
     message: "Card deleted successfully",
     cards: result,
   });
+};
+
+export const setDefaultCard = async (req: Request, res: Response) => {
+  const { clerkId } = req.params;
+  const data = req.body;
+
+  await CardModel.updateMany(
+    { clerkId },
+    { $set: { "cards.$[].isDefault": false } }
+  );
+
+  const card = await CardModel.findOneAndUpdate(
+    { clerkId },
+    {
+      $set: {
+        "cards.$[card].isDefault": true,
+      },
+      $inc: { "cards.$[card]._v": 1 },
+    },
+    {
+      arrayFilters: [{ "card._id": data._id }],
+      new: true,
+    }
+  );
+
+  if (!card) {
+    throw NotFoundError(`No card with id: ${data._id}`);
+  }
+
+  res.status(StatusCodes.OK).json({ card });
 };
