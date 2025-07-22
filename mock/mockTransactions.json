@@ -16,7 +16,15 @@
           "description": "Groceries for the week",
           "createdAt": "2025-07-15T12:30:00.000Z",
           "updatedAt": "2025-07-15T12:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d3" },
@@ -28,7 +36,15 @@
           "description": "Uber ride to the office",
           "createdAt": "2025-07-15T10:15:00.000Z",
           "updatedAt": "2025-07-15T10:15:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d4" },
@@ -40,7 +56,15 @@
           "description": "Netflix subscription",
           "createdAt": "2025-07-14T12:00:00.000Z",
           "updatedAt": "2025-07-14T12:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d5" },
@@ -52,7 +76,15 @@
           "description": "Monthly salary",
           "createdAt": "2025-07-01T00:00:00.000Z",
           "updatedAt": "2025-07-01T00:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d6" },
@@ -64,7 +96,15 @@
           "description": "Starbucks coffee",
           "createdAt": "2025-07-15T08:45:00.000Z",
           "updatedAt": "2025-07-15T08:45:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d8" },
@@ -76,7 +116,15 @@
           "description": "Flight to Paris",
           "createdAt": "2025-07-13T12:30:00.000Z",
           "updatedAt": "2025-07-13T12:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d9" },
@@ -88,7 +136,15 @@
           "description": "Doctor visit",
           "createdAt": "2025-07-12T14:00:00.000Z",
           "updatedAt": "2025-07-12T14:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0da" },
@@ -100,7 +156,15 @@
           "description": "Zara shopping",
           "createdAt": "2025-07-11T15:35:00.000Z",
           "updatedAt": "2025-07-11T15:35:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0db" },
@@ -112,7 +176,15 @@
           "description": "Rent payment",
           "createdAt": "2025-07-10T00:00:00.000Z",
           "updatedAt": "2025-07-10T00:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0dc" },
@@ -124,7 +196,15 @@
           "description": "Freelance project",
           "createdAt": "2025-07-09T16:30:00.000Z",
           "updatedAt": "2025-07-09T16:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0dd" },
@@ -136,7 +216,15 @@
           "description": "Dental checkup",
           "createdAt": "2025-07-08T10:00:00.000Z",
           "updatedAt": "2025-07-08T10:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0de" },
@@ -148,7 +236,15 @@
           "description": "Dinner at Italian restaurant",
           "createdAt": "2025-07-14T19:00:00.000Z",
           "updatedAt": "2025-07-14T19:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0df" },
@@ -160,7 +256,15 @@
           "description": "Train ticket to city center",
           "createdAt": "2025-06-13T08:30:00.000Z",
           "updatedAt": "2025-06-13T08:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e0" },
@@ -172,7 +276,15 @@
           "description": "Movie tickets for two",
           "createdAt": "2025-06-12T20:00:00.000Z",
           "updatedAt": "2025-06-12T20:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e1" },
@@ -184,7 +296,15 @@
           "description": "Morning coffee at local cafe",
           "createdAt": "2025-06-14T09:00:00.000Z",
           "updatedAt": "2025-06-14T09:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e3" },
@@ -196,7 +316,15 @@
           "description": "Hotel booking for weekend trip",
           "createdAt": "2025-06-10T14:00:00.000Z",
           "updatedAt": "2025-06-10T14:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e4" },
@@ -208,7 +336,15 @@
           "description": "Clothes shopping at H&M",
           "createdAt": "2025-06-09T13:30:00.000Z",
           "updatedAt": "2025-06-09T13:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e5" },
@@ -220,7 +356,15 @@
           "description": "Monthly electricity bill",
           "createdAt": "2025-06-08T00:00:00.000Z",
           "updatedAt": "2025-06-08T00:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "685c29a19cf487b3d70d187f" },
@@ -232,7 +376,15 @@
           "description": "Railway Tickets",
           "createdAt": "2025-06-25T16:53:53.904Z",
           "updatedAt": "2025-06-25T16:53:53.904Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         }
       ],
       "06": [
@@ -246,7 +398,15 @@
           "description": "Groceries for the week",
           "createdAt": "2025-06-15T12:30:00.000Z",
           "updatedAt": "2025-06-15T12:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d3" },
@@ -258,7 +418,15 @@
           "description": "Uber ride to the office",
           "createdAt": "2025-06-15T10:15:00.000Z",
           "updatedAt": "2025-06-15T10:15:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d4" },
@@ -270,7 +438,15 @@
           "description": "Netflix subscription",
           "createdAt": "2025-06-14T12:00:00.000Z",
           "updatedAt": "2025-06-14T12:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d5" },
@@ -282,7 +458,15 @@
           "description": "Monthly salary",
           "createdAt": "2025-06-01T00:00:00.000Z",
           "updatedAt": "2025-06-01T00:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d6" },
@@ -294,7 +478,15 @@
           "description": "Starbucks coffee",
           "createdAt": "2025-06-15T08:45:00.000Z",
           "updatedAt": "2025-06-15T08:45:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d7" },
@@ -306,7 +498,15 @@
           "description": "PlayStation Plus subscription",
           "createdAt": "2025-06-14T14:40:00.000Z",
           "updatedAt": "2025-06-14T14:40:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d8" },
@@ -318,7 +518,15 @@
           "description": "Flight to Paris",
           "createdAt": "2025-06-13T12:30:00.000Z",
           "updatedAt": "2025-06-13T12:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0d9" },
@@ -330,7 +538,15 @@
           "description": "Doctor visit",
           "createdAt": "2025-06-12T14:00:00.000Z",
           "updatedAt": "2025-06-12T14:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0da" },
@@ -342,7 +558,15 @@
           "description": "Zara shopping",
           "createdAt": "2025-06-11T15:35:00.000Z",
           "updatedAt": "2025-06-11T15:35:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0db" },
@@ -354,7 +578,15 @@
           "description": "Rent payment",
           "createdAt": "2025-06-10T00:00:00.000Z",
           "updatedAt": "2025-06-10T00:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0dc" },
@@ -366,7 +598,15 @@
           "description": "Freelance project",
           "createdAt": "2025-06-09T16:30:00.000Z",
           "updatedAt": "2025-06-09T16:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0dd" },
@@ -378,7 +618,15 @@
           "description": "Dental checkup",
           "createdAt": "2025-06-08T10:00:00.000Z",
           "updatedAt": "2025-06-08T10:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0de" },
@@ -390,7 +638,15 @@
           "description": "Dinner at Italian restaurant",
           "createdAt": "2025-06-14T19:00:00.000Z",
           "updatedAt": "2025-06-14T19:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0df" },
@@ -402,7 +658,15 @@
           "description": "Train ticket to city center",
           "createdAt": "2025-06-13T08:30:00.000Z",
           "updatedAt": "2025-06-13T08:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e0" },
@@ -414,7 +678,15 @@
           "description": "Movie tickets for two",
           "createdAt": "2025-06-12T20:00:00.000Z",
           "updatedAt": "2025-06-12T20:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e1" },
@@ -426,7 +698,15 @@
           "description": "Morning coffee at local cafe",
           "createdAt": "2025-06-14T09:00:00.000Z",
           "updatedAt": "2025-06-14T09:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e2" },
@@ -438,7 +718,15 @@
           "description": "New Xbox game purchase",
           "createdAt": "2025-06-11T16:45:00.000Z",
           "updatedAt": "2025-06-11T16:45:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e3" },
@@ -450,7 +738,15 @@
           "description": "Hotel booking for weekend trip",
           "createdAt": "2025-06-10T14:00:00.000Z",
           "updatedAt": "2025-06-10T14:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e4" },
@@ -462,7 +758,15 @@
           "description": "Clothes shopping at H&M",
           "createdAt": "2025-06-09T13:30:00.000Z",
           "updatedAt": "2025-06-09T13:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c0e5" },
@@ -474,7 +778,15 @@
           "description": "Monthly electricity bill",
           "createdAt": "2025-06-08T00:00:00.000Z",
           "updatedAt": "2025-06-08T00:00:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "687d6d61d02a2833daa17ad7",
+            "bankName": "Rabobank",
+            "cardType": "debit",
+            "lastFourDigits": "5432",
+            "cardholderName": "John Doe",
+            "color": "#FF8000"
+          }
         },
         {
           "_id": { "$oid": "685c29a19cf487b3d70d187f" },
@@ -486,7 +798,15 @@
           "description": "Railway Tickets",
           "createdAt": "2025-06-25T16:53:53.904Z",
           "updatedAt": "2025-06-25T16:53:53.904Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         }
       ],
       "05": [
@@ -500,7 +820,15 @@
           "description": "Groceries for the week",
           "createdAt": "2025-05-15T12:30:00.000Z",
           "updatedAt": "2025-05-15T12:30:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         },
         {
           "_id": { "$oid": "65f1a2b3c4d5e6f7a8b9c013" },
@@ -512,7 +840,15 @@
           "description": "Uber ride to the office",
           "createdAt": "2025-05-15T10:15:00.000Z",
           "updatedAt": "2025-05-15T10:15:00.000Z",
-          "_v": 0
+          "_v": 0,
+          "card": {
+            "_id": "686ebabb9527f4e45c8dc87d",
+            "bankName": "Raiffeisen Bank",
+            "cardType": "credit",
+            "lastFourDigits": "0423",
+            "cardholderName": "John Doe",
+            "color": "#FFD600"
+          }
         }
       ]
     }
