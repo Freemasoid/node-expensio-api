@@ -5,6 +5,14 @@ export type Transaction = {
   type: "expense" | "income";
   category: string;
   date: string;
+  card: {
+    _id: string;
+    bankName: string;
+    cardType: "credit" | "debit";
+    lastFourDigits: string;
+    cardholderName: string;
+    color: string;
+  };
   description?: string;
   createdAt: string;
   updatedAt: string;

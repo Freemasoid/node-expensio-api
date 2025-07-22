@@ -15,6 +15,14 @@ export interface TransactionDocument extends Document {
         type: "expense" | "income";
         date: string;
         description?: string;
+        card: {
+          _id: string;
+          bankName: string;
+          cardType: "credit" | "debit";
+          lastFourDigits: string;
+          cardholderName: string;
+          color: string;
+        };
       }>;
     };
   };
